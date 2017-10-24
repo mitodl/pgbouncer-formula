@@ -1,0 +1,9 @@
+name: pgbouncer
+os: RedHat, CentOS, Ubuntu, Debian
+os_family: RedHat, Debian
+version: 201710
+release: 1
+summary: Formula to install, configure, and manage PGBouncer for adding connection pooling to your servers
+description: Formula to install, configure, and manage PGBouncer for adding connection pooling to your servers
+top_level_dir: pgbouncer
+recommended: 

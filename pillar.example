@@ -1,0 +1,7 @@
+# -*- mode: yaml -*-
+pgbouncer:
+  overrides:
+    pkg: pgbouncer
+    conf_file: /usr/local/etc/pgbouncer/pgbouncer.conf
+  config:
+    key: othervalue

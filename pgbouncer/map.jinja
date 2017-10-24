@@ -1,0 +1,14 @@
+{% set pgbouncer = salt.grains.filter_by({
+    'default': {
+        'pkgs': ['pgbouncer'],
+        'service': 'pgbouncer',
+        'conf_file': '/etc/pgbouncer/pgbouncer.conf',
+        'config': {
+            'key': 'value',
+        },
+    },
+    'Debian': {
+    },
+    'RedHat': {
+    },
+}, grain='os_family', merge=salt.pillar.get('pgbouncer:overrides), base='default') %}
