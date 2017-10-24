@@ -2,13 +2,19 @@
     'default': {
         'pkgs': ['pgbouncer'],
         'service': 'pgbouncer',
-        'conf_file': '/etc/pgbouncer/pgbouncer.conf',
+        'conf_file': '/etc/pgbouncer/pgbouncer.ini',
         'config': {
-            'key': 'value',
+            'pgbouncer': {
+                'pool_mode': 'transaction',
+                'logfile': '/var/log/postgresql/pgbouncer.log',
+                'listen_addr': 'localhost',
+                'listen_port': 6432,
+                'pidfile': '/var/run/postgresql/pgbouncer.pid'
+            }
         },
     },
     'Debian': {
     },
     'RedHat': {
     },
-}, grain='os_family', merge=salt.pillar.get('pgbouncer:overrides), base='default') %}
+}, grain='os_family', merge=salt.pillar.get('pgbouncer:overrides'), base='default') %}

@@ -9,6 +9,8 @@ pgbouncer-config:
     - name: {{ pgbouncer.conf_file }}
     - source: salt://pgbouncer/templates/conf.jinja
     - template: jinja
+    - context:
+        config: {{ pgbouncer.config }}
     - watch_in:
       - service: pgbouncer_service_running
     - require:
