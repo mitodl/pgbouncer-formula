@@ -11,7 +11,7 @@ pgbouncer-config:
     - template: jinja
     - context:
         config: {{ pgbouncer.config }}
-    - watch_in:
+    - onchanges_in:
       - service: pgbouncer_service_running
     - require:
       - pkg: pgbouncer
