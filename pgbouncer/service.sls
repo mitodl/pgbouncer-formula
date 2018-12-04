@@ -4,4 +4,3 @@ pgbouncer_service_running:
   service.running:
     - name: {{ pgbouncer.service }}
     - enable: True
-    - reload: True
