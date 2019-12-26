@@ -6,7 +6,7 @@ include:
 
 pgbouncer-config:
   file.managed:
-    - name: {{ pgbouncer.conf_file }}
+    - name: {{ pgbouncer.conf_file|tojson }}
     - source: salt://pgbouncer/templates/conf.jinja
     - template: jinja
     - context:
